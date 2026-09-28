@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-heading: 'Zen Maru Gothic', 'Kiwi Maru', sans-serif;
+    --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-japanese: 'Kiwi Maru', 'Zen Maru Gothic', serif;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: #FAF7F2;
+    color: #4A3E3D;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: var(--font-heading);
+  }
+}
+
+/* Paper and Stationery effects */
+.paper-pattern {
+  background-color: #FAF7F2;
+  background-image: radial-gradient(#e5dec9 0.75px, transparent 0.75px), radial-gradient(#e5dec9 0.75px, #FAF7F2 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+
+.notebook-grid {
+  background-size: 24px 24px;
+  background-image: linear-gradient(to right, rgba(230, 215, 205, 0.4) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(230, 215, 205, 0.4) 1px, transparent 1px);
+}
+
+.washi-tape-pink {
+  background: rgba(251, 207, 232, 0.85);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transform: rotate(-1.5deg);
+}
+
+.washi-tape-matcha {
+  background: rgba(187, 247, 208, 0.85);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transform: rotate(1deg);
+}
+
+/* Custom soft scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #E8D5CE;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D8B4A6;
+}
+
+/* Subtle falling sakura petal animation */
+@keyframes petalFall {
+  0% {
+    transform: translate(0, -10px) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.8;
+  }
+  85% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(80px, 100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.animate-petal {
+  animation: petalFall 12s linear infinite;
+}

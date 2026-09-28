@@ -1,0 +1,7 @@
+{
+  "name": "SAKURA DAY – Nhật ký cuộc sống cá nhân",
+  "description": "Ứng dụng nhật ký cuộc sống cá nhân phong cách hoa anh đào Nhật Bản với lịch trình, thói quen, tâm trạng, hộp ký ức, âm thanh thư giãn và câu hỏi mỗi ngày.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
