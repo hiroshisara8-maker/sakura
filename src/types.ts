@@ -47,6 +47,43 @@ export interface Habit {
   color: string;
 }
 
+export interface RoutineItem {
+  id: string;
+  time: string; // e.g., '06:30'
+  title: string;
+  period: 'morning' | 'afternoon' | 'evening' | 'night';
+  completed: boolean;
+  icon: string;
+}
+
+export interface ExpenseItem {
+  id: string;
+  date: string; // YYYY-MM-DD
+  amount: number;
+  category: 'food' | 'transport' | 'living' | 'study' | 'shopping' | 'other';
+  note: string;
+  time?: string;
+}
+
+export interface DailyLivingLog {
+  date: string; // YYYY-MM-DD
+  waterMl: number; // e.g. 1500 (target: 2000)
+  targetWaterMl: number;
+  sleepHours: number;
+  bedTime: string;
+  wakeTime: string;
+  sleepQuality: 'great' | 'normal' | 'poor';
+  meals: {
+    breakfast: string;
+    lunch: string;
+    dinner: string;
+    snack: string;
+  };
+  workoutMinutes: number;
+  roomCleaned: boolean;
+  personalNotes?: string;
+}
+
 export type MemoryCategory = 'all' | 'family' | 'friends' | 'travel' | 'achievement' | 'love' | 'cozy';
 
 export interface Memory {
@@ -80,6 +117,23 @@ export interface UserSettings {
   language: 'vi' | 'en' | 'ja';
   reminderTime: string;
   reminderEnabled: boolean;
+  dailyWaterTarget: number;
+  dailySleepTarget: number;
 }
 
-export type ActiveTab = 'today' | 'calendar' | 'write' | 'memories' | 'timeline' | 'habits' | 'tasks' | 'goals' | 'stats' | 'search' | 'profile';
+export type ActiveTab = 
+  | 'today' 
+  | 'routine'
+  | 'wellness'
+  | 'expenses'
+  | 'calendar' 
+  | 'write' 
+  | 'memories' 
+  | 'timeline' 
+  | 'habits' 
+  | 'tasks' 
+  | 'goals' 
+  | 'stats' 
+  | 'search' 
+  | 'profile';
+

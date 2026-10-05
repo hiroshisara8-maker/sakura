@@ -1,4 +1,4 @@
-import { Habit, Memory, MoodDefinition, Goal, DiaryEntry, Task, UserSettings } from '../types';
+import { Habit, Memory, MoodDefinition, Goal, DiaryEntry, Task, UserSettings, RoutineItem, ExpenseItem, DailyLivingLog } from '../types';
 
 export const MOODS: MoodDefinition[] = [
   {
@@ -333,4 +333,152 @@ export const DEFAULT_SETTINGS: UserSettings = {
   language: 'vi',
   reminderTime: '21:30',
   reminderEnabled: true,
+  dailyWaterTarget: 2000,
+  dailySleepTarget: 8,
 };
+
+export const DEFAULT_ROUTINES: RoutineItem[] = [
+  {
+    id: 'rt-1',
+    time: '06:30',
+    title: 'Thức dậy & uống 1 ly nước ấm thanh lọc',
+    period: 'morning',
+    completed: true,
+    icon: '🌅',
+  },
+  {
+    id: 'rt-2',
+    time: '07:15',
+    title: 'Vệ sinh cá nhân, skincare & ăn sáng',
+    period: 'morning',
+    completed: true,
+    icon: '🍳',
+  },
+  {
+    id: 'rt-3',
+    time: '08:00',
+    title: 'Tập trung học tập / làm việc ca sáng',
+    period: 'morning',
+    completed: true,
+    icon: '💻',
+  },
+  {
+    id: 'rt-4',
+    time: '12:00',
+    title: 'Ăn trưa bổ dưỡng & nghỉ trưa 20 phút',
+    period: 'afternoon',
+    completed: true,
+    icon: '🍱',
+  },
+  {
+    id: 'rt-5',
+    time: '14:00',
+    title: 'Ca chiều & bổ sung 1 ly nước mát',
+    period: 'afternoon',
+    completed: false,
+    icon: '💧',
+  },
+  {
+    id: 'rt-6',
+    time: '17:30',
+    title: 'Tập thể dục nhẹ / Yoga / Tản bộ',
+    period: 'afternoon',
+    completed: false,
+    icon: '🧘‍♀️',
+  },
+  {
+    id: 'rt-7',
+    time: '19:00',
+    title: 'Ăn tối & dọn dẹp không gian sinh hoạt',
+    period: 'evening',
+    completed: false,
+    icon: '🥗',
+  },
+  {
+    id: 'rt-8',
+    time: '21:30',
+    title: 'Tắm nước ấm, skincare & dưỡng ẩm',
+    period: 'night',
+    completed: false,
+    icon: '🛁',
+  },
+  {
+    id: 'rt-9',
+    time: '22:15',
+    title: 'Viết nhật ký SAKURA & đọc sách',
+    period: 'night',
+    completed: false,
+    icon: '📖',
+  },
+  {
+    id: 'rt-10',
+    time: '22:45',
+    title: 'Tắt thiết bị điện tử & đi ngủ đúng giờ',
+    period: 'night',
+    completed: false,
+    icon: '🌙',
+  },
+];
+
+export const DEFAULT_EXPENSES: ExpenseItem[] = [
+  {
+    id: 'exp-1',
+    date: getTodayFormatted(),
+    amount: 35000,
+    category: 'food',
+    note: 'Bánh mì ngũ cốc & sữa đậu nành buổi sáng',
+    time: '07:30',
+  },
+  {
+    id: 'exp-2',
+    date: getTodayFormatted(),
+    amount: 55000,
+    category: 'food',
+    note: 'Cơm trưa văn phòng & canh rong biển',
+    time: '12:15',
+  },
+  {
+    id: 'exp-3',
+    date: getTodayFormatted(),
+    amount: 25000,
+    category: 'living',
+    note: 'Mua nước khoáng & giấy lau bàn',
+    time: '15:20',
+  },
+  {
+    id: 'exp-4',
+    date: getOffsetDateFormatted(-1),
+    amount: 45000,
+    category: 'food',
+    note: 'Tách matcha latte tại quán cafe',
+    time: '16:00',
+  },
+  {
+    id: 'exp-5',
+    date: getOffsetDateFormatted(-1),
+    amount: 60000,
+    category: 'study',
+    note: 'Mua bút lông và sổ ghi chép',
+    time: '18:30',
+  },
+];
+
+export const DEFAULT_LIVING_LOG: DailyLivingLog = {
+  date: getTodayFormatted(),
+  waterMl: 1500,
+  targetWaterMl: 2000,
+  sleepHours: 7.5,
+  bedTime: '23:00',
+  wakeTime: '06:30',
+  sleepQuality: 'great',
+  meals: {
+    breakfast: 'Bánh mì mè đen, trứng ốp la & sữa chua hoa quả',
+    lunch: 'Cơm cá hồi áp chảo, rau luộc & canh miso',
+    dinner: 'Salad ức gà sốt mè rang thanh đạm',
+    snack: 'Táo tươi và 1 tách trà xanh',
+  },
+  workoutMinutes: 25,
+  roomCleaned: true,
+  personalNotes: 'Hôm nay cảm thấy cơ thể nhẹ nhõm, nhịp sinh hoạt rất đều đặn 🌸',
+};
+
